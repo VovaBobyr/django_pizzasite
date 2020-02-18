@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
+
+New change
 """
 
 import os
@@ -44,7 +46,7 @@ INSTALLED_APPS = [
     'app2', # urls
     'app3', # Static app
     'app4', # Templates
-    'app5', # Form handling 
+    'app5', # Form handling
 ]
 
 MIDDLEWARE = [

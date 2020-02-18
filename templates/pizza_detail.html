@@ -14,4 +14,13 @@
       <div>Pizza short description: {{ pizza.sort_description }}</div
       <div>Pizza price: {{ pizza.price|floatformat:"-1" }}</div>
     </div>
+    <h2>Order</h2>
+    {% if sent %}
+    <h2>Thank you. Your order got.</h2>
+    {% endif %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_ul }}
+      <input type="submit" value="Send order">
+    </form>
 {% endblock %}

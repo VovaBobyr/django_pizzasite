@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'app2', # urls
     'app3', # Static app
     'app4', # Templates
+    'app5', # Form handling 
 ]
 
 MIDDLEWARE = [

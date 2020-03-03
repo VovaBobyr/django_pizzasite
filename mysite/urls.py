@@ -17,12 +17,18 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_login
 #from app2 import views
 #from app3 import views
-from app4 import views
+#from app5 import views
+#from app4 import views
+from authapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    re_path(r'^(?P<pizza_id>\d+)', views.pizza_detail, name='pizza-detail'),
+    path('authapp/login/', auth_login.LoginView.as_view(template_name='authapp/login.html'), name='authapp-login'),
+    path('authapp/logout/', auth_login.LogoutView.as_view(template_name='/'), name='authapp-logout'),
+    #re_path(r'^(?P<pizza_id>\d+)', views.pizza_detail, name='pizza-detail'),
+    #path('formpage', views.form_page, name='form-page'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
